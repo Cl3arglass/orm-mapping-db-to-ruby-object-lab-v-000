@@ -31,7 +31,7 @@ class Student
   end
 
   def self.count_all_students_in_grade_9
-    sql = "SELECT COUNT(students.id) FROM students WHERE students.grade = 9"
+    sql = "SELECT COUNT(students.grade) FROM students WHERE students.grade = 9"
     DB[:conn].execute(sql,name).map {|row| self.new_from_db(row)}.first
   end
 
